@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
-import { Helmet } from "react-helmet";
 import { Metas } from "../Layout/Metas";
 
 const TITLE = "Base64 encoder/decoder";

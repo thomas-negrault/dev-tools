@@ -7,7 +7,7 @@ export default function VerticalMenu() {
     <div id="menu">
       <div className="pure-menu custom-restricted-width">
         <NavLink to="/" className="pure-menu-heading">
-          DevTools.best 🛠
+          DevTools.best
         </NavLink>
         <ul className="pure-menu-list">
           {getLinksConfig().map(link => (
