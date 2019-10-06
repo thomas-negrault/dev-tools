@@ -1,5 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
+import { Helmet } from "react-helmet";
+import { Metas } from "../Layout/Metas";
+
+const TITLE = "Base64 encoder/decoder";
+const DESCRIPTION = "Encode or decode base64 strings";
 
 function Base64Tools() {
   const [decodedString, setDecodedString] = useState("");
@@ -29,9 +34,10 @@ function Base64Tools() {
 
   return (
     <>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="header">
-        <h1>Base64</h1>
-        <h2>Encode or decode base64 strings</h2>
+        <h1>{TITLE}</h1>
+        <h2>{DESCRIPTION}</h2>
       </div>
       <div className="content">
         <div className="pure-form">

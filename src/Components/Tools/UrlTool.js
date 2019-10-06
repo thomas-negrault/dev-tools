@@ -1,5 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
+import { Metas } from "../Layout/Metas";
+const TITLE = "Url Encoder/Decoder Tool";
+const DESCRIPTION =
+  'Encode or decode urls. Replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits.';
 
 function UrlTool() {
   const [decodedUrl, setDecodedUrl] = useState("");
@@ -28,9 +32,10 @@ function UrlTool() {
   }, [encodedUrl]);
   return (
     <>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="header">
-        <h1>Base64</h1>
-        <h2>Encode or decode urls</h2>
+        <h1>{TITLE}</h1>
+        <h2>{DESCRIPTION}</h2>
       </div>
       <div className="content">
         <div className="pure-form">

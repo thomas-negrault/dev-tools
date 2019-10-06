@@ -12,7 +12,8 @@ export const Content = () => {
           </Route>
         ))}
         <Route path="/">
-          <span> You are on the homepage</span>
+          <p> Homepage - 🏗 Work in progress 🚧</p>
+          <p> 👈🏼 Access any tool by clicking on the left menu</p>
         </Route>
       </Switch>
     </div>

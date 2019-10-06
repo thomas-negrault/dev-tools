@@ -292,3 +292,7 @@ div.content {
 #json-formatter {
   text-align: left;
 }
+
+#menu .pure-menu-heading {
+   text-transform: none;
+}

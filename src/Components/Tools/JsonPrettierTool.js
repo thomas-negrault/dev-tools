@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 import JSONFormatter from "json-formatter-js";
+import { Metas } from "../Layout/Metas";
+
+const TITLE = "Json Prettier Tool";
+const DESCRIPTION =
+  "Input a json string and navigate through the visual representation of the decoded json";
 
 function JsonPrettierTool() {
   const [json, setJson] = useState("");
@@ -36,9 +41,10 @@ function JsonPrettierTool() {
 
   return (
     <>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="header">
-        <h1>Json Prettier</h1>
-        <h2>Pretty display a json</h2>
+        <h1>{TITLE}</h1>
+        <h2>{DESCRIPTION}</h2>
       </div>
       <div className="content">
         <div className="pure-form">

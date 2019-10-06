@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
-
+import { Metas } from "../Layout/Metas";
+const TITLE = "Text Statistics Tool";
+const DESCRIPTION =
+  "Give detailed statistics about a text: number of characters (with and without spaces), number of words, line breaks and more.";
 function WordCount() {
   const [text, setText] = useState("");
 
@@ -10,11 +13,10 @@ function WordCount() {
 
   return (
     <>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="header">
-        <h1>Text Statistics</h1>
-        <h2>
-          Give detailed statistics about a text (words, characters, spaces etc.)
-        </h2>
+        <h1>{TITLE}</h1>
+        <h2>{DESCRIPTION}</h2>
       </div>
       <div className="content">
         <div className="pure-form">
