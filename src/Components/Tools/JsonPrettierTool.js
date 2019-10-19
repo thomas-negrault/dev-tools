@@ -5,7 +5,7 @@ import { Metas } from "../Layout/Metas";
 
 const TITLE = "Json Prettier Tool";
 const DESCRIPTION =
-  "Input a json string and navigate through the visual representation of the decoded json";
+  "Input a json string and navigate through the visual representation of the decoded json.";
 
 function JsonPrettierTool() {
   const [json, setJson] = useState("");

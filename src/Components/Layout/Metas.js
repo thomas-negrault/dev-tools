@@ -6,10 +6,10 @@ export const Metas = ({ title, description }) => {
     <Helmet>
       <meta charSet="utf-8" />
       <title>{title} - Devtools</title>
-      <link rel="canonical" href="https://devtools.best" />
       <meta
         name="description"
         content={`${description} - Free, fast and simple online tools`}
+        data-react-helmet="true"
       />
     </Helmet>
   );

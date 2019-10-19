@@ -3,7 +3,7 @@ import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
 
 const TITLE = "Base64 encoder/decoder";
-const DESCRIPTION = "Encode or decode base64 strings";
+const DESCRIPTION = "Encode or decode base64 strings.";
 
 function Base64Tools() {
   const [decodedString, setDecodedString] = useState("");

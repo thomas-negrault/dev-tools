@@ -22,6 +22,7 @@ function App() {
         <meta
           name="description"
           content="A set of free, fast and simple online tools, useful for developers"
+          data-react-helmet="true"
         />
       </Helmet>
       <span id="menuLink" className="menu-link" onClick={toggleMobileActive}>
