@@ -296,3 +296,7 @@ div.content {
 #menu .pure-menu-heading {
    text-transform: none;
 }
+
+.pure-table thead tr{
+  text-align: center;
+}

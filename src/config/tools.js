@@ -3,6 +3,8 @@ import React from "react";
 import UrlTool from "../Components/Tools/UrlTool";
 import WordCountTool from "../Components/Tools/WordCountTool";
 import JsonPrettierTool from "../Components/Tools/JsonPrettierTool";
+import TimestampTool from "../Components/Tools/TimestampTool";
+import UuidTools from "../Components/Tools/UuidTools";
 
 const links = [
   {
@@ -27,6 +29,16 @@ const links = [
     path: "/json-prettier",
     label: "Json Prettier",
     component: <JsonPrettierTool />
+  },
+  {
+    path: "/timestamp",
+    label: "Timestamp",
+    component: <TimestampTool />
+  },
+  {
+    path: "/uuid",
+    label: "Uuid",
+    component: <UuidTools />
   }
 ];
 
