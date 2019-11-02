@@ -33,74 +33,95 @@ function Base64Tools() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} />
-      <div className="header">
+      <Metas title={TITLE} description={DESCRIPTION}/>
+      <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
       </div>
-      <div className="content">
-        <div className="pure-form">
-          <fieldset>
-            <textarea
-              rows="6"
-              cols="60"
-              value={decodedString}
-              placeholder="Decoded string"
-              onChange={onDecodedStringChange}
-              autoFocus
-            />
-            <button
-              className="pure-button"
-              title={"Copy to clipboard"}
-              onClick={() => {
-                copyToClipBoard(decodedString);
-              }}
-            >
-              <i className="fas fa-copy" />
-            </button>
-            <button
-              className="pure-button"
-              title={"Empty the input"}
-              onClick={() => {
-                setDecodedString("");
-              }}
-            >
-              <i className="fas fa-undo" />
-            </button>
-            <textarea
-              aria-invalid={encodedStringError}
-              rows="6"
-              cols="60"
-              value={encodedString}
-              onChange={onEncodedStringChange}
-              placeholder="Encoded string"
-            />
-            <button
-              className="pure-button"
-              title={"Copy to clipboard"}
-              onClick={() => {
-                copyToClipBoard(encodedString);
-              }}
-            >
-              <i className="fas fa-copy" />
-            </button>
-            <button
-              className="pure-button"
-              title={"Empty the input"}
-              onClick={() => {
-                setEncodedString("");
-              }}
-            >
-              <i className="fas fa-undo" />
-            </button>
-            {encodedStringError && (
-              <p className="error">
-                The string is not a valid base 64 encoded string
-              </p>
-            )}
-          </fieldset>
+
+      <form>
+        <div className="form-group row">
+          <div className="col">
+            <div className="row">
+              <textarea
+                className="dark"
+                rows="6"
+                cols="60"
+                value={decodedString}
+                placeholder="Decoded string"
+                onChange={onDecodedStringChange}
+                autoFocus
+              />
+            </div>
+
+            <div className="action-buttons">
+              <button
+                type="button"
+                className="btn btn-outline-success"
+                title={"Copy to clipboard"}
+                onClick={() => {
+                  copyToClipBoard(decodedString);
+                }}
+              >
+                <i className="fas fa-copy"/>
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline-success"
+                title={"Empty the input"}
+                onClick={() => {
+                  setDecodedString("");
+                }}
+              >
+                <i className="fas fa-undo"/>
+              </button>
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="row">
+              <textarea
+                className="dark"
+                aria-invalid={encodedStringError}
+                rows="6"
+                cols="60"
+                value={encodedString}
+                onChange={onEncodedStringChange}
+                placeholder="Encoded string"
+              />
+            </div>
+            <div className="action-buttons">
+              <button
+                type="button"
+                className="btn btn-outline-success"
+                title={"Copy to clipboard"}
+                onClick={() => {
+                  copyToClipBoard(encodedString);
+                }}
+              >
+                <i className="fas fa-copy"/>
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline-success"
+                title={"Empty the input"}
+                onClick={() => {
+                  setEncodedString("");
+                }}
+              >
+                <i className="fas fa-undo"/>
+              </button>
+              {encodedStringError && (
+                <div className="bs-component">
+                  <div className="alert alert-danger">
+                    The string is not a valid base 64 encoded string
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     </>
   );
 }

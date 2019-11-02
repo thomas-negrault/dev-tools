@@ -16,6 +16,9 @@ export const Footer = () => {
           </a>
         </p>
         <p>
+          Feel free to contact me at <a href="mailto:contact@devtools.best">contact@devtools.best</a>
+        </p>
+        <p>
           Icons made by{" "}
           <a href="https://www.flaticon.com/authors/becris" title="Becris">
             Becris

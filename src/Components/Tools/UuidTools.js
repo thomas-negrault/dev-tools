@@ -5,7 +5,7 @@ import uuidv4 from "uuid/v4";
 import { Metas } from "../Layout/Metas";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 
-const TITLE = "UUID";
+const TITLE = "UUID Generator Tool";
 const DESCRIPTION =
   "Generate a UUID (Universal Unique Identifier), a unique 128-bit number used for database indexes, in order to avoid guessable id (1,2,3...)";
 
@@ -21,34 +21,38 @@ function UuidTools() {
   return (
     <>
       <Metas title={TITLE} description={DESCRIPTION} />
-      <div className="header">
+      <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
       </div>
-      <div className="content">
-        <p>
-          <button
-            className="pure-button"
-            title={"Generate new uuid"}
-            onClick={refreshUuid}
-          >
-            <i className="fas fa-redo-alt" />
-          </button>
-        </p>
-        <table className="pure-table pure-table-horizontal">
+      <div className="action-buttons">
+        <button
+          type="button"
+          className="btn btn-outline-success"
+          title={"Generate new uuid"}
+          onClick={refreshUuid}
+        >
+          <i className="fas fa-redo-alt" />
+        </button>
+      </div>
+
+      <div className="row">
+        <table className="table">
           <thead>
             <tr>
               <th>Version</th>
               <th>Value</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>UUID V1</td>
+              <td>{uuidV1}</td>
               <td>
-                {uuidV1}{" "}
                 <button
-                  className="pure-button"
+                  type="button"
+                  className="btn btn-outline-success"
                   title={"Copy to clipboard"}
                   onClick={() => {
                     copyToClipBoard(uuidV1);
@@ -60,10 +64,11 @@ function UuidTools() {
             </tr>
             <tr>
               <td>UUID v4</td>
+              <td>{uuidV4}</td>
               <td>
-                {uuidV4}{" "}
                 <button
-                  className="pure-button"
+                  type="button"
+                  className="btn btn-outline-success"
                   title={"Copy to clipboard"}
                   onClick={() => {
                     copyToClipBoard(uuidV4);

@@ -6,28 +6,45 @@ const TITLE = "Timestamp";
 const DESCRIPTION =
   "Convert date to timestamp or a timestamp to a readable date.";
 
+function convertToUtcDate(date) {
+  return new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      date.getUTCHours(),
+      date.getUTCMinutes(),
+      date.getUTCSeconds()
+    )
+  );
+}
+
 function TimestampTool() {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [customDate, setCustomDate] = useState(new Date());
+  const [currentUtcDate, setCurrentUtcDate] = useState(new Date());
+  const [customUtcDate, setCustomUtcDate] = useState(
+    convertToUtcDate(new Date())
+  );
+  console.log({ newDate: new Date(), converter: convertToUtcDate(new Date()) });
+  const [customLocaleDate, setCustomLocaleDate] = useState(new Date());
   const [invalidCustomTimestamp, setInvalidCustomTimestamp] = useState(false);
   const [invalidCustomUtcTimestamp, setInvalidCustomUtcTimestamp] = useState(
     false
   );
 
-  const setCustomDateFromTimestamp = useCallback(event => {
+  const setCustomUtcDateFromUnixTimestamp = useCallback(event => {
     const customTimestamp = new Date(event.target.value * 1000);
     if (customTimestamp instanceof Date && !isNaN(customTimestamp)) {
-      setCustomDate(customTimestamp);
+      setCustomUtcDate(customTimestamp);
       setInvalidCustomTimestamp(false);
       return;
     }
     setInvalidCustomTimestamp(true);
   }, []);
 
-  const setCustomDateFromUtcTimestamp = useCallback(event => {
+  const setCustomDateFromJavascriptTimestamp = useCallback(event => {
     const customUtcTimestamp = new Date(event.target.value);
     if (customUtcTimestamp instanceof Date && !isNaN(customUtcTimestamp)) {
-      setCustomDate(customUtcTimestamp);
+      setCustomUtcDate(convertToUtcDate(new Date(customUtcTimestamp)));
       setInvalidCustomUtcTimestamp(false);
       return;
     }
@@ -36,14 +53,14 @@ function TimestampTool() {
 
   useEffect(() => {
     setInterval(() => {
-      setCurrentDate(new Date());
+      setCurrentUtcDate(new Date());
     }, 100);
   }, []);
 
   return (
     <>
       <Metas title={TITLE} description={DESCRIPTION} />
-      <div className="header">
+      <div className="header text-xs-center">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
       </div>
@@ -52,18 +69,51 @@ function TimestampTool() {
           <thead>
             <tr>
               <th>Format</th>
-              <th>Now</th>
-              <th>Custom date</th>
+              <th colSpan="2">Now</th>
+              <th colSpan="2">Custom date</th>
+            </tr>
+            <tr>
+              <th />
+              <th>UTC</th>
+              <th>Local Timezone</th>
+              <th>UTC</th>
+              <th>Local Timezone</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>String</td>
-              <td>{currentDate.toLocaleString()}</td>
+              <td>
+                {currentUtcDate.toLocaleString(
+                  navigator.language || navigator.userLanguage,
+                  {
+                    timeZone: "UTC"
+                  }
+                )}
+              </td>
+              <td>
+                {currentUtcDate.toLocaleString(
+                  navigator.language || navigator.userLanguage,
+                  {
+                    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+                  }
+                )}
+              </td>
               <td>
                 <DateTimePicker
-                  onChange={setCustomDate}
-                  value={customDate}
+                  onChange={setCustomUtcDate}
+                  value={customUtcDate}
+                  disableClock
+                  showLeadingZeros
+                  clearIcon={null}
+                  calendarIcon={null}
+                  format={"y-MM-dd HH:mm:ss"}
+                />
+              </td>{" "}
+              <td>
+                <DateTimePicker
+                  onChange={setCustomLocaleDate}
+                  value={customLocaleDate}
                   disableClock
                   showLeadingZeros
                   clearIcon={null}
@@ -73,14 +123,30 @@ function TimestampTool() {
               </td>
             </tr>
             <tr>
-              <td>Timestamp UTC</td>
+              <td>Timestamp (Unix, in seconds)</td>
               <td>
-                {Math.floor(currentDate.getTime() / 1000)}{" "}
+                {Math.floor(convertToUtcDate(currentUtcDate) / 1000)}{" "}
                 <button
                   className="pure-button"
                   title={"Copy to clipboard"}
                   onClick={() => {
-                    copyToClipBoard(Math.floor(currentDate.getTime() / 1000));
+                    copyToClipBoard(
+                      Math.floor(currentUtcDate.getTime() / 1000)
+                    );
+                  }}
+                >
+                  <i className="fas fa-copy" />
+                </button>
+              </td>
+              <td>
+                {Math.floor(customLocaleDate.getTime() / 1000)}{" "}
+                <button
+                  className="pure-button"
+                  title={"Copy to clipboard"}
+                  onClick={() => {
+                    copyToClipBoard(
+                      Math.floor(currentUtcDate.getTime() / 1000)
+                    );
                   }}
                 >
                   <i className="fas fa-copy" />
@@ -89,15 +155,15 @@ function TimestampTool() {
               <td>
                 <input
                   type="text"
-                  value={Math.floor(customDate.getTime() / 1000)}
-                  onChange={setCustomDateFromTimestamp}
+                  value={Math.floor(customUtcDate.getTime() / 1000)}
+                  onChange={setCustomUtcDateFromUnixTimestamp}
                   maxLength="10"
                 />{" "}
                 <button
                   className="pure-button"
                   title={"Copy to clipboard"}
                   onClick={() => {
-                    copyToClipBoard(Math.floor(customDate.getTime() / 1000));
+                    copyToClipBoard(Math.floor(customUtcDate.getTime() / 1000));
                   }}
                 >
                   <i className="fas fa-copy" />
@@ -111,14 +177,14 @@ function TimestampTool() {
               </td>
             </tr>
             <tr>
-              <td>Timestamp</td>
+              <td>Timestamp (Javascript, in milliseconds)</td>
               <td>
-                {currentDate.getTime()}{" "}
+                {currentUtcDate.getTime()}{" "}
                 <button
                   className="pure-button"
                   title={"Copy to clipboard"}
                   onClick={() => {
-                    copyToClipBoard(currentDate.getTime());
+                    copyToClipBoard(currentUtcDate.getTime());
                   }}
                 >
                   <i className="fas fa-copy" />
@@ -127,15 +193,15 @@ function TimestampTool() {
               <td>
                 <input
                   type="text"
-                  value={customDate.getTime()}
-                  onChange={setCustomDateFromUtcTimestamp}
+                  value={customUtcDate.getTime()}
+                  onChange={setCustomDateFromJavascriptTimestamp}
                   maxLength="13"
                 />{" "}
                 <button
                   className="pure-button"
                   title={"Copy to clipboard"}
                   onClick={() => {
-                    copyToClipBoard(customDate.getTime());
+                    copyToClipBoard(customUtcDate.getTime());
                   }}
                 >
                   <i className="fas fa-copy" />

@@ -8,20 +8,24 @@ import UuidTools from "../Components/Tools/UuidTools";
 
 const links = [
   {
-    path: "/base64-decode",
+    path: "/base64-decode-encode",
     label: "Base64 Decode",
     component: <Base64Tools />
   },
   {
-    path: "/base64-encode",
+    path: "/base64-decode-encode",
     label: "Base64 Encode",
     component: <Base64Tools />
   },
-  { path: "/url-encode", label: "Url Encode", component: <UrlTool /> },
-  { path: "/url-decode", label: "Url Decode", component: <UrlTool /> },
-  { path: "/word-count", label: "Word Count", component: <WordCountTool /> },
+  { path: "/url-decode-encode", label: "Url Encode", component: <UrlTool /> },
+  { path: "/url-decode-encode", label: "Url Decode", component: <UrlTool /> },
   {
-    path: "/characters-count",
+    path: "/text-statistics",
+    label: "Word Count",
+    component: <WordCountTool />
+  },
+  {
+    path: "/text-statistics",
     label: "Characters Count",
     component: <WordCountTool />
   },
@@ -37,7 +41,7 @@ const links = [
   // },
   {
     path: "/uuid",
-    label: "Uuid",
+    label: "Uuid Generator",
     component: <UuidTools />
   }
 ];

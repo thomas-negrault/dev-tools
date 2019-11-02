@@ -14,14 +14,15 @@ function WordCount() {
   return (
     <>
       <Metas title={TITLE} description={DESCRIPTION} />
-      <div className="header">
+      <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
       </div>
-      <div className="content">
-        <div className="pure-form">
-          <fieldset>
+      <div className="form-group row">
+        <div className="col">
+          <div className="row">
             <textarea
+              className="dark"
               rows="6"
               cols="60"
               value={text}
@@ -29,8 +30,12 @@ function WordCount() {
               onChange={onTextChange}
               autoFocus
             />
+          </div>
+
+          <div className="action-buttons">
             <button
-              className="pure-button"
+              type="button"
+              className="btn btn-outline-success"
               title={"Copy to clipboard"}
               onClick={() => {
                 copyToClipBoard(text);
@@ -39,7 +44,8 @@ function WordCount() {
               <i className="fas fa-copy" />
             </button>
             <button
-              className="pure-button"
+              type="button"
+              className="btn btn-outline-success"
               title={"Empty the input"}
               onClick={() => {
                 setText("");
@@ -47,30 +53,32 @@ function WordCount() {
             >
               <i className="fas fa-undo" />
             </button>
-          </fieldset>
+          </div>
         </div>
-        <table className="pure-table">
-          <thead>
-            <tr>
-              <th>Characters</th>
-              <th>Characters (no spaces)</th>
-              <th>Spaces</th>
-              <th>Words</th>
-              <th>Line Breaks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{text.length}</td>
-              <td>
-                {text ? text.length - (text.match(/ /g) || []).length : 0}
-              </td>
-              <td>{(text.match(/ /g) || []).length}</td>
-              <td>{text ? text.split(" ").length : 0}</td>
-              <td>{(text.match(/\r?\n|\r/g) || []).length}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="col">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Characters</th>
+                <th>Characters (no spaces)</th>
+                <th>Spaces</th>
+                <th>Words</th>
+                <th>Line Breaks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{text.length}</td>
+                <td>
+                  {text ? text.length - (text.match(/ /g) || []).length : 0}
+                </td>
+                <td>{(text.match(/ /g) || []).length}</td>
+                <td>{text ? text.split(" ").length : 0}</td>
+                <td>{(text.match(/\r?\n|\r/g) || []).length}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

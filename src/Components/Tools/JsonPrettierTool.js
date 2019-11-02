@@ -23,12 +23,12 @@ function JsonPrettierTool() {
     } catch (e) {
       setJsonError(true);
     }
-    if (jsonParsed !== {}) {
+    if ( Object.keys(jsonParsed).length !== 0) {
       const formatter = new JSONFormatter(jsonParsed, "Infinity", {
         hoverPreviewEnabled: false,
         hoverPreviewArrayCount: 100,
         hoverPreviewFieldCount: 5,
-        theme: "",
+        theme: "dark",
         animateOpen: true,
         animateClose: true,
         useToJSON: true
@@ -41,45 +41,64 @@ function JsonPrettierTool() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} />
-      <div className="header">
+      <Metas title={TITLE} description={DESCRIPTION}/>
+      <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
       </div>
-      <div className="content">
-        <div className="pure-form">
-          <fieldset>
+
+      <form>
+        <div className="form-group">
+          <div className="text-center">
             <textarea
-              rows="6"
-              cols="60"
+              className="dark"
+              rows="10"
+              cols="80"
               value={json}
-              placeholder={'{"id": 42, "foo":"bar"}'}
+              placeholder={"{\"id\": 42, \"foo\":\"bar\"}"}
               onChange={onJsonChange}
               autoFocus
             />
-            {jsonError && (
-              <p className="error">The string is not a valid json</p>
-            )}
+          </div>
+          <div className="action-buttons">
             <button
-              className="pure-button"
+              type="button"
+              className="btn btn-outline-success"
               title={"Copy to clipboard"}
               onClick={() => {
                 copyToClipBoard(json);
               }}
             >
-              <i className="fas fa-copy" />
+              <i className="fas fa-copy"/>
             </button>
             <button
-              className="pure-button"
+              type="button"
+              className="btn btn-outline-success"
               title={"Empty the input"}
               onClick={() => {
                 setJson("");
               }}
             >
-              <i className="fas fa-undo" />
+              <i className="fas fa-undo"/>
             </button>
-          </fieldset>
-          <div id="json-formatter" />
+          </div>
+          {jsonError && (
+            <div className="bs-component py-4">
+              <div className="alert alert-danger">
+                The string is not a valid json
+              </div>
+            </div>
+          )}
+        </div>
+      </form>
+      <div id="json-formatter" className="dark"/>
+      <div className="bs-component">
+        <div className="alert alert-secondary">
+          <strong>{"Tips: "}</strong>
+          {"You can easily generate dummy test json using "}
+          <a href="https://www.json-generator.com" className="alert-link">
+            json-generator.com
+          </a>
         </div>
       </div>
     </>
