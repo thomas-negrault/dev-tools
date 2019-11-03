@@ -4,7 +4,8 @@ import UrlTool from "../Components/Tools/UrlTool";
 import WordCountTool from "../Components/Tools/WordCountTool";
 import JsonPrettierTool from "../Components/Tools/JsonPrettierTool";
 import TimestampTool from "../Components/Tools/TimestampTool";
-import UuidTools from "../Components/Tools/UuidTools";
+import UuidTool from "../Components/Tools/UuidTool";
+import HashTool from "../Components/Tools/HashTool";
 
 const links = [
   {
@@ -42,7 +43,11 @@ const links = [
   {
     path: "/uuid",
     label: "Uuid Generator",
-    component: <UuidTools />
+    component: <UuidTool />
+  },{
+    path: "/text-hash-generator",
+    label: "Text Hash Generator Tool",
+    component: <HashTool />
   }
 ];
 

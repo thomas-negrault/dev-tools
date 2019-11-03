@@ -168,3 +168,7 @@ ul ul a {
 .alert{
   margin-top:10px;
 }
+
+#hashTable td {
+  word-break: break-all;
+}

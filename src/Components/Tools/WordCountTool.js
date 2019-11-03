@@ -60,7 +60,7 @@ function WordCount() {
             <thead>
               <tr>
                 <th>Characters</th>
-                <th>Characters (no spaces)</th>
+                <th>Characters<br/>(no spaces)</th>
                 <th>Spaces</th>
                 <th>Words</th>
                 <th>Line Breaks</th>

@@ -9,7 +9,7 @@ const TITLE = "UUID Generator Tool";
 const DESCRIPTION =
   "Generate a UUID (Universal Unique Identifier), a unique 128-bit number used for database indexes, in order to avoid guessable id (1,2,3...)";
 
-function UuidTools() {
+function UuidTool() {
   const [uuidV1, setUuidV1] = useState(uuidv1());
   const [uuidV4, setUuidV4] = useState(uuidv4());
 
@@ -63,7 +63,7 @@ function UuidTools() {
               </td>
             </tr>
             <tr>
-              <td>UUID v4</td>
+              <td>UUID V4</td>
               <td>{uuidV4}</td>
               <td>
                 <button
@@ -85,4 +85,4 @@ function UuidTools() {
   );
 }
 
-export default UuidTools;
+export default UuidTool;

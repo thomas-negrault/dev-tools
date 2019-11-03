@@ -3244,9 +3244,9 @@ destroy@~1.0.4:
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
 detect-element-overflow@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/detect-element-overflow/-/detect-element-overflow-1.1.1.tgz#771c50ec9d69f487477fef9728db0766a8f6962d"
-  integrity sha512-07f/EWuaPHU2JqPLg1JPuNaf47h+A5dt70EHO+X+U1zzSuAsgmI5qAU3kP1bCMICYmuvMrcqEZOIxiLB9d8zdg==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/detect-element-overflow/-/detect-element-overflow-1.2.0.tgz#86e504292ffedc3aef813395fbdf0261aaf6afa9"
+  integrity sha512-Jtr9ivYPhpd9OJux+hjL0QjUKiS1Ghgy8tvIufUjFslQgIWvgGr4mn57H190APbKkiOmXnmtMI6ytaKzMusecg==
 
 detect-libc@^1.0.2:
   version "1.0.3"
@@ -3441,9 +3441,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.247, electron-to-chromium@^1.3.295:
-  version "1.3.299"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.299.tgz#9113b733247c68b87e07cb7c940a22913fb74d38"
-  integrity sha512-aH3lKMQFPuNk4w7W3hQDqnjfYKJQLzbp5Adn6xgTz5547kKSGOmAU7cQWxH953L4ntZL4HsZ8XWqfcMTvTcEMw==
+  version "1.3.302"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.302.tgz#4c7ba3d56166507a56f7eb603fdde1ed701f5ac8"
+  integrity sha512-1qConyiVEbj4xZRBXqtGR003+9tV0rJF0PS6aeO0Ln/UL637js9hdwweCl07meh/kJoI2N4W8q3R3g3F5z46ww==
 
 elliptic@^6.0.0:
   version "6.5.1"
@@ -4335,9 +4335,9 @@ get-stream@^4.0.0:
     pump "^3.0.0"
 
 get-user-locale@^1.1.1, get-user-locale@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/get-user-locale/-/get-user-locale-1.2.0.tgz#e4940db90a6694a512455af3f756903a01410eb7"
-  integrity sha512-yodJVDMWnM4ZOGa+n1ofebE8u+yjd8FIZMqthUK+xcOQcmfU2ECaP5gLiTMt6j0R/e67QsEelES0fQYLy/oHPg==
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/get-user-locale/-/get-user-locale-1.3.0.tgz#21ea740e413541281ae7b2b42e70ee523b7725b2"
+  integrity sha512-c5N8P0upjxCF9unIC2vTA+B+8nN7kU/D/TeItMAVYhWIIksyoULM1aflKflXM3w+Ij6vF/JZys+QcwIoDuy3Ag==
   dependencies:
     lodash.once "^4.1.1"
 
@@ -5795,6 +5795,11 @@ jsesc@~0.5.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
   integrity sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=
 
+jshashes@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/jshashes/-/jshashes-1.0.7.tgz#bed8c97a0e9632fd0513916f55f76dd5486be59f"
+  integrity sha1-vtjJeg6WMv0FE5FvVfdt1Uhr5Z8=
+
 json-formatter-js@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/json-formatter-js/-/json-formatter-js-2.2.1.tgz#b101d628e86f028dc9cf9a7e1c83c65e536c9f87"
@@ -6186,9 +6191,9 @@ memory-fs@^0.5.0:
     readable-stream "^2.0.1"
 
 merge-class-names@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.2.0.tgz#cb30ecfc3bdbd96b6f76d0a98777907e5fbb3462"
-  integrity sha512-ifHxhC8DojHT1rG3PHCaJYInUqPd0WO+PxsaYDMkgy7RzfyOFtnlpr/hbhki+m/3R/ujIRVnZkD/AHjgjb5uhg==
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/merge-class-names/-/merge-class-names-1.3.0.tgz#c4cdc1a981a81dd9afc27aa4287e912a337c5dee"
+  integrity sha512-k0Qaj36VBpKgdc8c188LEZvo6v/zzry/FUufwopWbMSp6/knfVFU/KIB55/hJjeIpg18IH2WskXJCRnM/1BrdQ==
 
 merge-deep@^3.0.2:
   version "3.0.2"
@@ -9797,9 +9802,9 @@ uglify-js@3.4.x:
     source-map "~0.6.1"
 
 uglify-js@^3.1.4:
-  version "3.6.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.6.tgz#7ec28c92c7131c6a096b69cd48722600cc534207"
-  integrity sha512-q3Zusqd028P8MdbarqL0I1snTZ7+IbIWiKUXVZyXMVdOSxOG2FFqLXyGlgYSqYu46SR7tR3Sk0xqN1VtvxGWnQ==
+  version "3.6.7"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.7.tgz#15f49211df6b8a01ee91322bbe46fa33223175dc"
+  integrity sha512-4sXQDzmdnoXiO+xvmTzQsfIiwrjUCSA95rSP4SEd8tDb51W2TiDOlL76Hl+Kw0Ie42PSItCW8/t6pBNCF2R48A==
   dependencies:
     commander "~2.20.3"
     source-map "~0.6.1"
