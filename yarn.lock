@@ -8283,6 +8283,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-lorem-ipsum@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/react-lorem-ipsum/-/react-lorem-ipsum-1.4.4.tgz#b1339ef52961a42867cfd95697fcfad26e529b3c"
+  integrity sha512-JAaZIV+KV3XK+cVtSs612hJSicSyRt7ppMN4Nu/yD8ELZIw8vV7fAk+vkD7xoKAqx1NgXQUzWnOE7PZ9C8u6Xg==
+
 react-router-dom@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.1.2.tgz#06701b834352f44d37fbb6311f870f84c76b9c18"

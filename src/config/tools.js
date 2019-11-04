@@ -6,6 +6,7 @@ import JsonPrettierTool from "../Components/Tools/JsonPrettierTool";
 import TimestampTool from "../Components/Tools/TimestampTool";
 import UuidTool from "../Components/Tools/UuidTool";
 import HashTool from "../Components/Tools/HashTool";
+import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
 
 const links = [
   {
@@ -48,6 +49,11 @@ const links = [
     path: "/text-hash-generator",
     label: "Text Hash Generator Tool",
     component: <HashTool />
+  }
+  ,{
+    path: "/lorem-ipsum-generator",
+    label: "Lorem Ipsum Generator Tool",
+    component: <LoremIpsumTool />
   }
 ];
 

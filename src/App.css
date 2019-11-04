@@ -3,9 +3,6 @@
 body {
   font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
 }
-#json-formatter{
-
-}
 
 .tool-header h1,.tool-header .h1 {
   font-size: 2rem;
@@ -110,13 +107,16 @@ ul ul a {
   padding-left: 30px !important;
   /*background: #6d7fcc;*/
 }
+textarea.dark {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .dark {
   background-color: #444;
   border-radius: 0.25rem;
   color: #fff;
   outline-color: #00bc8c;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .content {
