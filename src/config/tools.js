@@ -8,6 +8,7 @@ import UuidTool from "../Components/Tools/UuidTool";
 import HashTool from "../Components/Tools/HashTool";
 import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
 import HtmlTool from "../Components/Tools/HtmlTool";
+import TextEffectsTool from "../Components/Tools/TextEffectsTool";
 
 const links = [
   {
@@ -52,6 +53,10 @@ const links = [
     path: "/html-encoder-decoder",
     label: "HTML Entities Encoder/Decoder",
     component: <HtmlTool/>
+  }, {
+    path: "/text-effects",
+    label: "Text effects tool",
+    component: <TextEffectsTool/>
   }
 ];
 
