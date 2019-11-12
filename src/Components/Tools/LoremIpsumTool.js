@@ -3,7 +3,7 @@ import { loremIpsum } from "react-lorem-ipsum";
 import { Metas } from "../Layout/Metas";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 
-const TITLE = "Lorem Ipsum";
+const TITLE = "Lorem Ipsum Generator";
 const DESCRIPTION =
   "Quickly generate a random Lorem Ipsum text with a lot of customization possible";
 

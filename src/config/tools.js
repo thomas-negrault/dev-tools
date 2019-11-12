@@ -11,24 +11,15 @@ import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
 const links = [
   {
     path: "/base64-decode-encode",
-    label: "Base64 Decode",
+    label: "Base64 Encoder/Decoder",
     component: <Base64Tools />
   },
-  {
-    path: "/base64-decode-encode",
-    label: "Base64 Encode",
-    component: <Base64Tools />
-  },
-  { path: "/url-decode-encode", label: "Url Encode", component: <UrlTool /> },
-  { path: "/url-decode-encode", label: "Url Decode", component: <UrlTool /> },
+  { path: "/url-decode-encode",
+    label: "Url Encoder/Decoder",
+    component: <UrlTool /> },
   {
     path: "/text-statistics",
-    label: "Word Count",
-    component: <WordCountTool />
-  },
-  {
-    path: "/text-statistics",
-    label: "Characters Count",
+    label: "Text Statistics",
     component: <WordCountTool />
   },
   {
@@ -47,12 +38,12 @@ const links = [
     component: <UuidTool />
   },{
     path: "/text-hash-generator",
-    label: "Text Hash Generator Tool",
+    label: "Text Hash Generator",
     component: <HashTool />
   }
   ,{
     path: "/lorem-ipsum-generator",
-    label: "Lorem Ipsum Generator Tool",
+    label: "Lorem Ipsum Generator",
     component: <LoremIpsumTool />
   }
 ];
