@@ -7,25 +7,28 @@ import TimestampTool from "../Components/Tools/TimestampTool";
 import UuidTool from "../Components/Tools/UuidTool";
 import HashTool from "../Components/Tools/HashTool";
 import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
+import HtmlTool from "../Components/Tools/HtmlTool";
 
 const links = [
   {
     path: "/base64-decode-encode",
     label: "Base64 Encoder/Decoder",
-    component: <Base64Tools />
+    component: <Base64Tools/>
   },
-  { path: "/url-decode-encode",
+  {
+    path: "/url-decode-encode",
     label: "Url Encoder/Decoder",
-    component: <UrlTool /> },
+    component: <UrlTool/>
+  },
   {
     path: "/text-statistics",
     label: "Text Statistics",
-    component: <WordCountTool />
+    component: <WordCountTool/>
   },
   {
     path: "/json-prettier",
     label: "Json Prettier",
-    component: <JsonPrettierTool />
+    component: <JsonPrettierTool/>
   },
   // {
   //   path: "/timestamp",
@@ -35,16 +38,20 @@ const links = [
   {
     path: "/uuid",
     label: "Uuid Generator",
-    component: <UuidTool />
-  },{
+    component: <UuidTool/>
+  }, {
     path: "/text-hash-generator",
     label: "Text Hash Generator",
-    component: <HashTool />
+    component: <HashTool/>
   }
-  ,{
+  , {
     path: "/lorem-ipsum-generator",
     label: "Lorem Ipsum Generator",
-    component: <LoremIpsumTool />
+    component: <LoremIpsumTool/>
+  }, {
+    path: "/html-encoder-decoder",
+    label: "HTML Entities Encoder/Decoder",
+    component: <HtmlTool/>
   }
 ];
 
