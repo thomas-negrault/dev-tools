@@ -9,6 +9,7 @@ import HashTool from "../Components/Tools/HashTool";
 import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
 import HtmlTool from "../Components/Tools/HtmlTool";
 import TextEffectsTool from "../Components/Tools/TextEffectsTool";
+import DiffTool from "../Components/Tools/DiffTool";
 
 const links = [
   {
@@ -57,6 +58,10 @@ const links = [
     path: "/text-effects",
     label: "Text effects tool",
     component: <TextEffectsTool/>
+  }, {
+    path: "/text-diff",
+    label: "Text Diff Tool",
+    component: <DiffTool/>
   }
 ];
 

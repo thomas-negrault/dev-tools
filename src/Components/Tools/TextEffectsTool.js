@@ -1,6 +1,4 @@
 import React, { useCallback, useState } from "react";
-import Hashes from "jshashes";
-
 import { Metas } from "../Layout/Metas";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 
