@@ -176,3 +176,7 @@ textarea.dark {
 .form-check-inline.custom-control{
   display: inline;
 }
+
+div.diff{
+  white-space:pre;
+}

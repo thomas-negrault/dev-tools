@@ -162,19 +162,24 @@ function DiffTool() {
         </div>
       </form>
 
+      {text1 === text2 && <div className="bs-component">
+        <div className="alert alert-success text-center">
+         The two strings are equals !
+        </div>
+      </div>}
       {text1 !== "" && text2 !== "" && (
         <div className="py-4">
-          <div className="bs-component dark text-wrap font-weight-bold">
+          <div className="bs-component dark font-weight-bold diff">
             {diff.map((part, index) => {
-              const color = part.added
-                ? '#2ecc71'
+              const backgroundColor = part.added
+                ? '#00bc8c'
                 : part.removed
-                ? '#e74c3c'
-                : '#95a5a6';
+                ? '#E74C3C'
+                : 'initial';
 
               return part.value.split('\n').map((text, indexText) => {
                 return (
-                  <span key={`${index}-${indexText}`} style={{ color }}>
+                  <span key={`${index}-${indexText}`} style={{ backgroundColor }}>
                     {indexText > 0 && <br />}
                     {text}
                   </span>
