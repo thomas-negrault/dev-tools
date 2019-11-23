@@ -180,3 +180,10 @@ textarea.dark {
 div.diff{
   white-space:pre;
 }
+
+#emojis .emoji{
+  cursor: pointer;
+}
+#emojis .emoji:hover{
+  border: 1px solid #00bc8c;
+}

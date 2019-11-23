@@ -10,6 +10,7 @@ import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
 import HtmlTool from "../Components/Tools/HtmlTool";
 import TextEffectsTool from "../Components/Tools/TextEffectsTool";
 import DiffTool from "../Components/Tools/DiffTool";
+import EmojiTool from "../Components/Tools/EmojiTool/EmojiTool";
 
 const links = [
   {
@@ -62,6 +63,10 @@ const links = [
     path: "/text-diff",
     label: "Text Diff Tool",
     component: <DiffTool/>
+  }, {
+    path: "/emoji-picker",
+    label: "Emoji Picker Tool",
+    component: <EmojiTool/>
   }
 ];
 

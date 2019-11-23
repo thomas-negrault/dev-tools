@@ -8,11 +8,13 @@
     "he": "^1.2.0",
     "jshashes": "^1.0.7",
     "json-formatter-js": "^2.2.1",
+    "moment": "^2.24.0",
     "react": "^16.10.2",
     "react-datetime-picker": "^2.7.1",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-lorem-ipsum": "^1.4.4",
+    "react-modal": "^3.11.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "uuid": "^3.3.3"
