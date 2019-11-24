@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Website
 
-## Available Scripts
+You can access this app at: [DevTools.best](https://devtools.best)
 
-In the project directory, you can run:
+# Why ?
 
-### `npm start`
+I wanted to create a **React application** as a side project and I was tired of always searching on Google for tools like "base64 decoder", "uuid generator" and all that kind of little dev tools.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+My idea was to create a **single web app** that will always be open in my
+first browser tab.
+I wanted the design to be **clean and simple to use**, as a lot of tools websites have an old look and feel. I also wanted to have a result as quickly as possible because the goal of this project is to save time.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Tools:
 
-### `npm test`
+- [Base64 Encoder/Decoder](https://devtools.best/base64-decode-encode)
+- [Emoji Picker Tool](https://devtools.best/emoji-picker)
+- [HTML Entities Encoder/Decoder](https://devtools.best/html-encoder-decoder)
+- [Json Prettier](https://devtools.best/json-prettier)
+- [Lorem Ipsum Generator](https://devtools.best/lorem-ipsum-generator)
+- [Text Diff Tool](https://devtools.best/text-diff)
+- [Text Hash Generator](https://devtools.best/text-hash-generator)
+- [Text Statistics](https://devtools.best/text-statistics)
+- [Text Effects tool](https://devtools.best/text-effects)
+- [Url Encoder/Decoder](https://devtools.best/url-decode-encode)
+- [UUID Generator](https://devtools.best/uuid)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Evolution
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+If you want a new tool to be added, feel free to submit your idea to [contact@devtools.best](mailto:contact@devtools.best), or open an issue. I will do my best to add it !

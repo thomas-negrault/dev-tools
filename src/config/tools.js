@@ -40,7 +40,7 @@ const links = [
   // },
   {
     path: "/uuid",
-    label: "Uuid Generator",
+    label: "UUID Generator",
     component: <UuidTool/>
   }, {
     path: "/text-hash-generator",
@@ -57,7 +57,7 @@ const links = [
     component: <HtmlTool/>
   }, {
     path: "/text-effects",
-    label: "Text effects tool",
+    label: "Text Effects tool",
     component: <TextEffectsTool/>
   }, {
     path: "/text-diff",

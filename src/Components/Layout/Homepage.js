@@ -14,7 +14,7 @@ export const Homepage = () => {
           My idea was to create a <b>single web app</b> that will always be open in my
           first browser tab.</p>
         <p> I wanted the design to be <b>clean and simple to use</b>, as a
-          lot of tools website have an old look and feel. I also wanted to have a
+          lot of tools websites have an old look and feel. I also wanted to have a
           result as quickly as possible because the goal of this project is to save time.
         </p>
         <p>
