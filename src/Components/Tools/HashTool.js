@@ -31,7 +31,7 @@ function HashTool() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} />
+      <Metas title={TITLE} description={DESCRIPTION} keywords={[].concat.apply([], Object.keys(hashAlgorithms).map(item => [item + ' encoder', item + ' decoder', item + ' hash generator'] ))} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>

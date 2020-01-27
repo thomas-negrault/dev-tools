@@ -61,7 +61,7 @@ const links = [
     component: <TextEffectsTool/>
   }, {
     path: "/text-diff",
-    label: "Text Diff Tool",
+    label: "Text Comparison Tool",
     component: <DiffTool/>
   }, {
     path: "/emoji-picker",

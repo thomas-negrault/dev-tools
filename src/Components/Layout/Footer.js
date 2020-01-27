@@ -4,9 +4,8 @@ export const Footer = () => {
   return (
     <div className="footer">
       <div className="pure-u-1 u-sm-1-2">
-        <p className="legal-license">Made with ❤️ in Paris</p>
         <p className="legal-copyright">
-          © 2019 - Present{" "}
+         {` © 2019 - ${new Date().getFullYear()} `}
           <a
             href="https://fr.linkedin.com/in/negraultthomas"
             rel="noopener noreferrer"

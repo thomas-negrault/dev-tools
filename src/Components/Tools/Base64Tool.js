@@ -33,7 +33,7 @@ function Base64Tools() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION}/>
+      <Metas title={TITLE} description={DESCRIPTION} keywords={['base64 encode', 'base64 decode', 'base64encode', 'base64decode', 'base 64', 'base 64 encoder', 'base64 decoder', 'base64 generator']}/>
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>

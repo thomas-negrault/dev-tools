@@ -8,7 +8,7 @@ const diffs = {
   Words: "diffWords",
   "Words with spaces": "diffWordsWithSpace",
 };
-const TITLE = "Text Diff Tool";
+const TITLE = "Text Comparison Tool";
 const DESCRIPTION =
   "Compare two texts and highlights differences in them with multiple algorithms: " +
   Object.keys(diffs).join(",");
@@ -42,7 +42,7 @@ function DiffTool() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} />
+      <Metas title={TITLE} description={DESCRIPTION} keywords={['text differ', 'text compare', 'text comparison', 'string compare', 'string comparison']} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
