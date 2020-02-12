@@ -20,12 +20,12 @@ function UrlTool() {
   }, []);
 
   useEffect(() => {
-    setEncodedUrl(encodeURI(decodedUrl));
+    setEncodedUrl(encodeURIComponent(decodedUrl));
   }, [decodedUrl]);
 
   useEffect(() => {
     try {
-      setDecodedUrl(decodeURI(encodedUrl));
+      setDecodedUrl(decodeURIComponent(encodedUrl));
       setEncodedUrlError(false);
     } catch (e) {
       setEncodedUrlError(true);
