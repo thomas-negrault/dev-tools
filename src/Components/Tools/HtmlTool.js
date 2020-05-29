@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
-import he from 'he';
+import he from "he";
 
 const TITLE = "HTML Encoder/Decoder Tool";
 const DESCRIPTION =
@@ -11,30 +11,46 @@ function HtmlTool() {
   const [decodedHtml, setDecodedHtml] = useState("");
   const [encodedHtml, setEncodedHtml] = useState("");
   const [encodedHtmlError, setEncodedHtmlError] = useState(false);
+  const [useNamedReferences, setUseNamedReferences] = useState(true);
 
-  const onDecodedHtmlChange = useCallback(event => {
-    setDecodedHtml(event.target.value);
-  }, []);
+  const onDecodedHtmlChange = useCallback(
+    event => {
+      const newDecodedHtml = event.target.value;
+      setDecodedHtml(newDecodedHtml);
+      setEncodedHtml(
+        he.encode(newDecodedHtml, { useNamedReferences: useNamedReferences })
+      );
+    },
+    [useNamedReferences]
+  );
 
   const onEncodedHtmlChange = useCallback(event => {
-    setEncodedHtml(event.target.value);
-  }, []);
-
-  useEffect(() => {
-    setEncodedHtml(he.encode(decodedHtml));
-  }, [decodedHtml]);
-
-  useEffect(() => {
+    const newEncodedHtml = event.target.value;
+    setEncodedHtml(newEncodedHtml);
     try {
-      setDecodedHtml(he.decode(encodedHtml));
+      setDecodedHtml(he.decode(newEncodedHtml));
       setEncodedHtmlError(false);
     } catch (e) {
       setEncodedHtmlError(true);
     }
-  }, [encodedHtml]);
+  }, []);
+
+  const onUseNamedReferencesChange = useCallback(
+    event => {
+      const newUseNamedReferencesChange = event.target.checked;
+      setUseNamedReferences(newUseNamedReferencesChange);
+      setEncodedHtml(
+        he.encode(decodedHtml, {
+          useNamedReferences: newUseNamedReferencesChange
+        })
+      );
+    },
+    [decodedHtml]
+  );
+
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION}/>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -63,7 +79,7 @@ function HtmlTool() {
                   copyToClipBoard(decodedHtml);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -73,7 +89,7 @@ function HtmlTool() {
                   setDecodedHtml("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
             </div>
           </div>
@@ -98,7 +114,7 @@ function HtmlTool() {
                   copyToClipBoard(encodedHtml);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -108,9 +124,23 @@ function HtmlTool() {
                   setEncodedHtml("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
             </div>
+
+            <label>
+              Use named references{" "}
+              <input
+                type={"checkbox"}
+                checked={useNamedReferences}
+                onChange={onUseNamedReferencesChange}
+              />
+            </label>
+            <p>
+              If checked, will display named entities like:{" "}
+              <code>{"&amp;"}</code> instead of the hexadecimal form:{" "}
+              <code>{"&#x26;"}</code>
+            </p>
             {encodedHtmlError && (
               <div className="bs-component">
                 <div className="alert alert-danger">

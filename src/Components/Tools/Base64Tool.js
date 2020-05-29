@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
 
@@ -11,29 +11,38 @@ function Base64Tools() {
   const [encodedStringError, setEncodedStringError] = useState(false);
 
   const onDecodedStringChange = useCallback(event => {
-    setDecodedString(event.target.value);
+    const newDecodedString = event.target.value;
+    setDecodedString(newDecodedString);
+    setEncodedString(btoa(newDecodedString));
   }, []);
 
   const onEncodedStringChange = useCallback(event => {
-    setEncodedString(event.target.value);
-  }, []);
-
-  useEffect(() => {
-    setEncodedString(btoa(decodedString));
-  }, [decodedString]);
-
-  useEffect(() => {
+    const newEncodedString = event.target.value;
+    setEncodedString(newEncodedString);
     try {
-      setDecodedString(atob(encodedString));
+      setDecodedString(atob(newEncodedString));
       setEncodedStringError(false);
     } catch (e) {
       setEncodedStringError(true);
     }
-  }, [encodedString]);
+  }, []);
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} keywords={['base64 encode', 'base64 decode', 'base64encode', 'base64decode', 'base 64', 'base 64 encoder', 'base64 decoder', 'base64 generator']}/>
+      <Metas
+        title={TITLE}
+        description={DESCRIPTION}
+        keywords={[
+          "base64 encode",
+          "base64 decode",
+          "base64encode",
+          "base64decode",
+          "base 64",
+          "base 64 encoder",
+          "base64 decoder",
+          "base64 generator"
+        ]}
+      />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -63,7 +72,7 @@ function Base64Tools() {
                   copyToClipBoard(decodedString);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -73,7 +82,7 @@ function Base64Tools() {
                   setDecodedString("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
             </div>
           </div>
@@ -99,7 +108,7 @@ function Base64Tools() {
                   copyToClipBoard(encodedString);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -109,7 +118,7 @@ function Base64Tools() {
                   setEncodedString("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
               {encodedStringError && (
                 <div className="bs-component">

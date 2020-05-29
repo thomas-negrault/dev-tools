@@ -5,7 +5,7 @@ export const Footer = () => {
     <div className="footer">
       <div className="pure-u-1 u-sm-1-2">
         <p className="legal-copyright">
-         {` © 2019 - ${new Date().getFullYear()} `}
+          {` © 2019 - ${new Date().getFullYear()} `}
           <a
             href="https://fr.linkedin.com/in/negraultthomas"
             rel="noopener noreferrer"
@@ -15,7 +15,8 @@ export const Footer = () => {
           </a>
         </p>
         <p>
-          Feel free to contact me at <a href="mailto:contact@devtools.best">contact@devtools.best</a>
+          Feel free to contact me at{" "}
+          <a href="mailto:contact@devtools.best">contact@devtools.best</a>
         </p>
         <p>
           Icons made by{" "}

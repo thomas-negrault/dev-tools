@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
 
 const TITLE = "Url Encoder/Decoder Tool";
 const DESCRIPTION =
-  "Encode or decode urls. Replaces unsafe ASCII characters with a \"%\" followed by two hexadecimal digits.";
+  'Encode or decode urls. Replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits.';
 
 function UrlTool() {
   const [decodedUrl, setDecodedUrl] = useState("");
@@ -12,28 +12,25 @@ function UrlTool() {
   const [encodedUrlError, setEncodedUrlError] = useState(false);
 
   const onDecodedUrlChange = useCallback(event => {
-    setDecodedUrl(event.target.value);
+    const newDecodedUrl = event.target.value;
+    setDecodedUrl(newDecodedUrl);
+    setEncodedUrl(encodeURI(newDecodedUrl));
   }, []);
 
   const onEncodedUrlChange = useCallback(event => {
-    setEncodedUrl(event.target.value);
-  }, []);
-
-  useEffect(() => {
-    setEncodedUrl(encodeURIComponent(decodedUrl));
-  }, [decodedUrl]);
-
-  useEffect(() => {
+    const newEncodedUrl = event.target.value;
+    setEncodedUrl(newEncodedUrl);
     try {
-      setDecodedUrl(decodeURIComponent(encodedUrl));
+      setDecodedUrl(decodeURIComponent(newEncodedUrl));
       setEncodedUrlError(false);
     } catch (e) {
       setEncodedUrlError(true);
     }
-  }, [encodedUrl]);
+  }, []);
+
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION}/>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -62,7 +59,7 @@ function UrlTool() {
                   copyToClipBoard(decodedUrl);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -72,7 +69,7 @@ function UrlTool() {
                   setDecodedUrl("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
             </div>
           </div>
@@ -97,7 +94,7 @@ function UrlTool() {
                   copyToClipBoard(encodedUrl);
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
               <button
                 type="button"
@@ -107,7 +104,7 @@ function UrlTool() {
                   setEncodedUrl("");
                 }}
               >
-                <i className="fas fa-undo"/>
+                <i className="fas fa-undo" />
               </button>
             </div>
             {encodedUrlError && (

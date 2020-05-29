@@ -15,13 +15,20 @@ function LoremIpsumTool() {
   const [startWithLoremIpsum, setStartWithLoremIpsum] = useState(true);
 
   useEffect(() => {
-    setLoremIpsumText(loremIpsum({
-      p: nbParagraphs,
-      avgWordsPerSentence,
-      avgSentencesPerParagraph,
-      startWithLoremIpsum
-    }));
-  }, [avgSentencesPerParagraph, avgWordsPerSentence, nbParagraphs, startWithLoremIpsum]);
+    setLoremIpsumText(
+      loremIpsum({
+        p: nbParagraphs,
+        avgWordsPerSentence,
+        avgSentencesPerParagraph,
+        startWithLoremIpsum
+      })
+    );
+  }, [
+    avgSentencesPerParagraph,
+    avgWordsPerSentence,
+    nbParagraphs,
+    startWithLoremIpsum
+  ]);
 
   const onAvgWordsPerSentenceChange = useCallback(event => {
     setAvgWordsPerSentence(event.target.value);
@@ -41,7 +48,7 @@ function LoremIpsumTool() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION}/>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -52,29 +59,42 @@ function LoremIpsumTool() {
           <ul className="list-group">
             <li className="list-group-item d-flex justify-content-between align-items-center">
               Number of paragraphs
-              <input type="number" className="col-4 dark" value={nbParagraphs} onChange={onNbParagraphsChange}/>
+              <input
+                type="number"
+                className="col-4 dark"
+                value={nbParagraphs}
+                onChange={onNbParagraphsChange}
+              />
             </li>
 
             <li className="list-group-item d-flex justify-content-between align-items-center">
               Average words per sentence
-              <input type="number" value={avgWordsPerSentence}
-                     className="col-4 dark"
-                     onChange={onAvgWordsPerSentenceChange}/>
+              <input
+                type="number"
+                value={avgWordsPerSentence}
+                className="col-4 dark"
+                onChange={onAvgWordsPerSentenceChange}
+              />
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
               Average sentences per paragraph
-              <input type="number" value={avgSentencesPerParagraph}
-                     className="col-4 dark"
-                     onChange={onAvgSentencesPerParagraphChange}/>
+              <input
+                type="number"
+                value={avgSentencesPerParagraph}
+                className="col-4 dark"
+                onChange={onAvgSentencesPerParagraphChange}
+              />
             </li>
 
             <li className="list-group-item d-flex justify-content-between align-items-center">
               Start with "Lorem ipsum"
-              <input type="checkbox" value={startWithLoremIpsum}
-                     checked={startWithLoremIpsum}
-                     onChange={onStartWithLoremIpsumChange}/>
+              <input
+                type="checkbox"
+                value={startWithLoremIpsum}
+                checked={startWithLoremIpsum}
+                onChange={onStartWithLoremIpsumChange}
+              />
             </li>
-
           </ul>
           <div>
             <div className="action-buttons text-lg-right text-md-center text-sm-center">
@@ -83,12 +103,10 @@ function LoremIpsumTool() {
                 className="btn btn-outline-success"
                 title={"Copy to clipboard"}
                 onClick={() => {
-                  copyToClipBoard(
-                    loremIpsumText
-                  );
+                  copyToClipBoard(loremIpsumText.join("\n"));
                 }}
               >
-                <i className="fas fa-copy"/>
+                <i className="fas fa-copy" />
               </button>
             </div>
           </div>
@@ -96,12 +114,10 @@ function LoremIpsumTool() {
 
         <div className="dark text-wrap p-3 col-lg-8 col-md-12 col-sm-12 py-4">
           {loremIpsumText.map(text => (
-            <p key={text}>
-              {text}
-            </p>
-          ))}        </div>
+            <p key={text}>{text}</p>
+          ))}{" "}
+        </div>
       </div>
-
     </>
   );
 }

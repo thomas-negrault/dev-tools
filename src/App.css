@@ -203,10 +203,6 @@ textarea.dark {
   display: inline;
 }
 
-div.diff{
-  white-space:pre;
-}
-
 #emojis .emoji{
   cursor: pointer;
 }
