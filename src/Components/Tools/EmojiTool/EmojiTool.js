@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Metas } from "../../Layout/Metas";
 import emojisList from "./emojis";
 import EmojiDetailsModal from "./EmojiDetaislModal";
+const EMOJI_BY_LINE = 12;
 
 const TITLE = "Emoji Picker Tool";
 const DESCRIPTION = "Find the perfect Emoji to express your feelings";
@@ -51,6 +52,33 @@ function EmojiTool() {
     setEmojis(allowedEmojiNames);
   }, [search]);
 
+  const rows = emojis
+    .map(function(emojiName) {
+      // map content to html elements
+      return (
+        <span
+          key={emojiName}
+          title={emojiName.replace(/_/g, " ")}
+          id={emojiName}
+          className="col-lg-1 col-md-3 col-sm-3 col-3 emoji"
+          onClick={onEmojiSelected}
+        >
+          {emojisList[emojiName].char}
+        </span>
+      );
+    })
+    .reduce(function(r, element, index) {
+      // create element groups with size 3, result looks like:
+      // [[elem1, elem2, elem3], [elem4, elem5, elem6], ...]
+      index % EMOJI_BY_LINE === 0 && r.push([]);
+      r[r.length - 1].push(element);
+      return r;
+    }, [])
+    .map(function(rowContent) {
+      // surround every group with 'row'
+      return <div className="row text-center">{rowContent}</div>;
+    });
+
   return (
     <>
       <Metas title={TITLE} description={DESCRIPTION} />
@@ -72,18 +100,9 @@ function EmojiTool() {
           onChange={onSearchChange}
         />
       </div>
+
       <div id="emojis" className="text-lg-center display-3">
-        {emojis.map(emojiName => (
-          <span
-            key={emojiName}
-            title={emojiName.replace(/_/g, " ")}
-            id={emojiName}
-            className="col-lg-1 col-md-2 col-sm-4 emoji"
-            onClick={onEmojiSelected}
-          >
-            {emojisList[emojiName].char}
-          </span>
-        ))}
+        {rows}
       </div>
     </>
   );

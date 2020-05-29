@@ -89,12 +89,6 @@
     "fitzpatrick_scale": false,
     "category": "people"
   },
-  "relaxed": {
-    "keywords": ["face", "blush", "massage", "happiness"],
-    "char": "☺️",
-    "fitzpatrick_scale": false,
-    "category": "people"
-  },
   "yum": {
     "keywords": ["happy", "joy", "tongue", "smile", "face", "silly", "yummy", "nom", "delicious", "savouring"],
     "char": "😋",
@@ -338,12 +332,6 @@
   "slightly_frowning_face": {
     "keywords": ["face", "frowning", "disappointed", "sad", "upset"],
     "char": "🙁",
-    "fitzpatrick_scale": false,
-    "category": "people"
-  },
-  "frowning_face": {
-    "keywords": ["face", "sad", "upset", "frown"],
-    "char": "☹",
     "fitzpatrick_scale": false,
     "category": "people"
   },
