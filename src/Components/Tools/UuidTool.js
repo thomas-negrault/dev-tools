@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import uuidv1 from "uuid/v1";
-import uuidv4 from "uuid/v4";
+import { v1 as uuidv1 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 import { Metas } from "../Layout/Metas";
 import copyToClipBoard from "../../Utils/CopyToClipboard";
