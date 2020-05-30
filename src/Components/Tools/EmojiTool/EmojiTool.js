@@ -54,7 +54,6 @@ function EmojiTool() {
 
   const rows = emojis
     .map(function(emojiName) {
-      // map content to html elements
       return (
         <span
           key={emojiName}
@@ -75,8 +74,11 @@ function EmojiTool() {
       return r;
     }, [])
     .map(function(rowContent) {
-      // surround every group with 'row'
-      return <div className="row text-center">{rowContent}</div>;
+      return (
+        <div key={rowContent[0].key} className="row text-center">
+          {rowContent}
+        </div>
+      );
     });
 
   return (
