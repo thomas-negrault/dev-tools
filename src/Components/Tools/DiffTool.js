@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
 import * as Diff from "diff";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const diffs = {
   Chars: "diffChars",
   Words: "diffWords",
-  "Words with spaces": "diffWordsWithSpace",
+  "Words with spaces": "diffWordsWithSpace"
 };
 const TITLE = "Text Comparison Tool";
 const DESCRIPTION =
@@ -37,12 +37,22 @@ function DiffTool() {
   }, []);
 
   useEffect(() => {
-    setDiff(Diff[diffs[diffType]](text1, text2, {ignoreCase}));
+    setDiff(Diff[diffs[diffType]](text1, text2, { ignoreCase }));
   }, [diffType, ignoreCase, text1, text2]);
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION} keywords={['text differ', 'text compare', 'text comparison', 'string compare', 'string comparison']} />
+      <Metas
+        title={TITLE}
+        description={DESCRIPTION}
+        keywords={[
+          "text differ",
+          "text compare",
+          "text comparison",
+          "string compare",
+          "string comparison"
+        ]}
+      />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -63,16 +73,8 @@ function DiffTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(text1);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={text1} />
+
               <button
                 type="button"
                 className="btn btn-outline-success"
@@ -97,16 +99,8 @@ function DiffTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(text2);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={text2} />
+
               <button
                 type="button"
                 className="btn btn-outline-success"
@@ -123,63 +117,70 @@ function DiffTool() {
       </form>
 
       <form>
-        <div className='form-group'>
-        {Object.keys(diffs)
-          .sort()
-          .map(label => (
-            <div className="form-check form-check-inline custom-control custom-radio" key={label}>
-              <input
-                onChange={onDiffTypeChange}
-                className="custom-control-input"
-                type="radio"
-                name="inlineRadioOptions"
-                id={label}
-                value={label}
-                checked={label === diffType}
-              />
-              <label className="custom-control-label" htmlFor={label}>
-                {label}
-              </label>
-            </div>
-          ))}
+        <div className="form-group">
+          {Object.keys(diffs)
+            .sort()
+            .map(label => (
+              <div
+                className="form-check form-check-inline custom-control custom-radio"
+                key={label}
+              >
+                <input
+                  onChange={onDiffTypeChange}
+                  className="custom-control-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id={label}
+                  value={label}
+                  checked={label === diffType}
+                />
+                <label className="custom-control-label" htmlFor={label}>
+                  {label}
+                </label>
+              </div>
+            ))}
         </div>
-        <div className='form-group'>
-
-        <div className="form-check form-check-inline custom-control custom-checkbox">
-          <input
-            onChange={onIgnoreCaseChange}
-            className="custom-control-input"
-            type="checkbox"
-            name="ignoreCase"
-            id={'ignoreCase'}
-            value={ignoreCase}
-            checked={ignoreCase}
-          />
-          <label className="custom-control-label" htmlFor={'ignoreCase'}>
-            Ignore case
-          </label>
-        </div>
+        <div className="form-group">
+          <div className="form-check form-check-inline custom-control custom-checkbox">
+            <input
+              onChange={onIgnoreCaseChange}
+              className="custom-control-input"
+              type="checkbox"
+              name="ignoreCase"
+              id={"ignoreCase"}
+              value={ignoreCase}
+              checked={ignoreCase}
+            />
+            <label className="custom-control-label" htmlFor={"ignoreCase"}>
+              Ignore case
+            </label>
+          </div>
         </div>
       </form>
 
-      {text1 === text2 && <div className="bs-component">
-        <div className="alert alert-success text-center">
-         The two strings are equals !
+      {text1 === text2 && (
+        <div className="bs-component">
+          <div className="alert alert-success text-center">
+            The two strings are equals !
+          </div>
         </div>
-      </div>}
+      )}
       {text1 !== "" && text2 !== "" && (
         <div className="py-4">
           <div className="bs-component dark font-weight-bold diff">
             {diff.map((part, index) => {
               const backgroundColor = part.added
-                ? '#00bc8c'
+                ? "#00bc8c"
                 : part.removed
-                ? '#E74C3C'
-                : 'initial';
+                ? "#E74C3C"
+                : "initial";
 
-              return part.value.split('\n').map((text, indexText) => {
+              return part.value.split("\n").map((text, indexText) => {
                 return (
-                  <span key={`${index}-${indexText}`} style={{ backgroundColor }}>
+                  <span
+                    key={`${index}-${indexText}`}
+                    style={{ backgroundColor }}
+                  >
                     {indexText > 0 && <br />}
                     {text}
                   </span>

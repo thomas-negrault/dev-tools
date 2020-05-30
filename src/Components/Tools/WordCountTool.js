@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 const TITLE = "Text Statistics Tool";
 const DESCRIPTION =
   "Give detailed statistics about a text: number of characters (with and without spaces), number of words, line breaks and more.";
@@ -33,16 +33,7 @@ function WordCount() {
           </div>
 
           <div className="action-buttons">
-            <button
-              type="button"
-              className="btn btn-outline-success"
-              title={"Copy to clipboard"}
-              onClick={() => {
-                copyToClipBoard(text);
-              }}
-            >
-              <i className="fas fa-copy" />
-            </button>
+            <ClipBoardCopyBtn text={text} />
             <button
               type="button"
               className="btn btn-outline-success"
