@@ -203,6 +203,10 @@ textarea.dark {
   display: inline;
 }
 
+.blog{
+  padding:20px
+}
+
 #emojis .emoji{
   cursor: pointer;
 }
