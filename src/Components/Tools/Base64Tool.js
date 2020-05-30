@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "Base64 encoder/decoder";
 const DESCRIPTION = "Encode or decode base64 strings.";
@@ -64,16 +64,8 @@ function Base64Tools() {
             </div>
 
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(decodedString);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={decodedString} />
+
               <button
                 type="button"
                 className="btn btn-outline-success"
@@ -100,16 +92,7 @@ function Base64Tools() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(encodedString);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={encodedString} />
               <button
                 type="button"
                 className="btn btn-outline-success"

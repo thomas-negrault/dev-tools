@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { Metas } from "../Layout/Metas";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 function flipString(aString) {
   const last = aString.length - 1;
@@ -175,16 +175,7 @@ function TextEffectsTool() {
                   <td>{effectName}</td>
                   <td>{effects[effectName](plainText)}</td>
                   <td>
-                    <button
-                      type="button"
-                      className="btn btn-outline-success"
-                      title={"Copy to clipboard"}
-                      onClick={() => {
-                        copyToClipBoard(effects[effectName](plainText));
-                      }}
-                    >
-                      <i className="fas fa-copy" />
-                    </button>
+                    <ClipBoardCopyBtn text={effects[effectName](plainText)} />
                   </td>
                 </tr>
               ))}

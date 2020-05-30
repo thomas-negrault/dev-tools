@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Metas } from "../Layout/Metas";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
-import { NavLink, useParams, useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import { effects } from "./TextEffectsTool";
 import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 const BASE_PATH = "/number-base-converter";

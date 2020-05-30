@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
 import he from "he";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "HTML Encoder/Decoder Tool";
 const DESCRIPTION =
@@ -71,16 +71,8 @@ function HtmlTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(decodedHtml);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={decodedHtml} />
+
               <button
                 type="button"
                 className="btn btn-outline-success"
@@ -106,16 +98,7 @@ function HtmlTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(encodedHtml);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={encodedHtml} />
               <button
                 type="button"
                 className="btn btn-outline-success"

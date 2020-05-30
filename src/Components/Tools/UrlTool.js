@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import { Metas } from "../Layout/Metas";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "Url Encoder/Decoder Tool";
 const DESCRIPTION =
@@ -51,16 +51,7 @@ function UrlTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(decodedUrl);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={decodedUrl} />
               <button
                 type="button"
                 className="btn btn-outline-success"
@@ -86,16 +77,7 @@ function UrlTool() {
               />
             </div>
             <div className="action-buttons">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(encodedUrl);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={encodedUrl} />
               <button
                 type="button"
                 className="btn btn-outline-success"

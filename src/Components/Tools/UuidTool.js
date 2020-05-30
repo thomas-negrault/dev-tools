@@ -3,7 +3,7 @@ import { v1 as uuidv1 } from "uuid";
 import { v4 as uuidv4 } from "uuid";
 
 import { Metas } from "../Layout/Metas";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "UUID Generator Tool";
 const DESCRIPTION =
@@ -50,32 +50,14 @@ function UuidTool() {
               <td>UUID V1</td>
               <td>{uuidV1}</td>
               <td>
-                <button
-                  type="button"
-                  className="btn btn-outline-success"
-                  title={"Copy to clipboard"}
-                  onClick={() => {
-                    copyToClipBoard(uuidV1);
-                  }}
-                >
-                  <i className="fas fa-copy" />
-                </button>
+                <ClipBoardCopyBtn text={uuidV1} />
               </td>
             </tr>
             <tr>
               <td>UUID V4</td>
               <td>{uuidV4}</td>
               <td>
-                <button
-                  type="button"
-                  className="btn btn-outline-success"
-                  title={"Copy to clipboard"}
-                  onClick={() => {
-                    copyToClipBoard(uuidV4);
-                  }}
-                >
-                  <i className="fas fa-copy" />
-                </button>
+                <ClipBoardCopyBtn text={uuidV4} />
               </td>
             </tr>
           </tbody>

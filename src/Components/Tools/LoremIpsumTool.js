@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { loremIpsum } from "react-lorem-ipsum";
 import { Metas } from "../Layout/Metas";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "Lorem Ipsum Generator";
 const DESCRIPTION =
@@ -98,16 +98,7 @@ function LoremIpsumTool() {
           </ul>
           <div>
             <div className="action-buttons text-lg-right text-md-center text-sm-center">
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(loremIpsumText.join("\n"));
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={loremIpsumText.join("\n")} />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-import copyToClipBoard from "../../Utils/CopyToClipboard";
 import JSONFormatter from "json-formatter-js";
 import { Metas } from "../Layout/Metas";
+import ClipBoardCopyBtn from "../common/ClipboardCopyBtn";
 
 const TITLE = "Json Prettier Tool";
 const DESCRIPTION =
@@ -23,7 +23,7 @@ function JsonPrettierTool() {
     } catch (e) {
       setJsonError(true);
     }
-    if ( Object.keys(jsonParsed).length !== 0) {
+    if (Object.keys(jsonParsed).length !== 0) {
       const formatter = new JSONFormatter(jsonParsed, "Infinity", {
         hoverPreviewEnabled: false,
         hoverPreviewArrayCount: 100,
@@ -41,7 +41,7 @@ function JsonPrettierTool() {
 
   return (
     <>
-      <Metas title={TITLE} description={DESCRIPTION}/>
+      <Metas title={TITLE} description={DESCRIPTION} />
       <div className="py-4 text-center tool-header">
         <h1>{TITLE}</h1>
         <h2>{DESCRIPTION}</h2>
@@ -55,22 +55,14 @@ function JsonPrettierTool() {
               rows="10"
               cols="80"
               value={json}
-              placeholder={"{\"id\": 42, \"foo\":\"bar\"}"}
+              placeholder={'{"id": 42, "foo":"bar"}'}
               onChange={onJsonChange}
               autoFocus
             />
           </div>
           <div className="action-buttons">
-            <button
-              type="button"
-              className="btn btn-outline-success"
-              title={"Copy to clipboard"}
-              onClick={() => {
-                copyToClipBoard(json);
-              }}
-            >
-              <i className="fas fa-copy"/>
-            </button>
+            <ClipBoardCopyBtn text={json} />
+
             <button
               type="button"
               className="btn btn-outline-success"
@@ -79,7 +71,7 @@ function JsonPrettierTool() {
                 setJson("");
               }}
             >
-              <i className="fas fa-undo"/>
+              <i className="fas fa-undo" />
             </button>
           </div>
           {jsonError && (
@@ -91,7 +83,7 @@ function JsonPrettierTool() {
           )}
         </div>
       </form>
-      <div id="json-formatter" className="dark"/>
+      <div id="json-formatter" className="dark" />
       <div className="bs-component">
         <div className="alert alert-secondary">
           <strong>{"Tips: "}</strong>

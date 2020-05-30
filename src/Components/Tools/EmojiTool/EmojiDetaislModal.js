@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import emojisList from "./emojis";
-import copyToClipBoard from "../../../Utils/CopyToClipboard";
+import ClipBoardCopyBtn from "../../common/ClipboardCopyBtn";
 
 const customStyles = {
   content: {
@@ -41,16 +41,7 @@ function EmojiDetailsModal({ modalIsOpen, closeModal, selectedEmoji }) {
               <p className="card-text">
                 {emojisList[selectedEmoji].keywords.join(", ")}
               </p>
-              <button
-                type="button"
-                className="btn btn-outline-success"
-                title={"Copy to clipboard"}
-                onClick={() => {
-                  copyToClipBoard(emojisList[selectedEmoji].char);
-                }}
-              >
-                <i className="fas fa-copy" />
-              </button>
+              <ClipBoardCopyBtn text={emojisList[selectedEmoji].char} />
             </div>
           </div>
         )}
