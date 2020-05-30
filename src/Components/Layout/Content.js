@@ -8,9 +8,7 @@ export const Content = () => {
     <div className="content container">
       <Switch>
         {getLinksConfig().map(link => (
-          <Route path={link.path} key={link.path}>
-            {link.component}
-          </Route>
+          <Route path={link.path} key={link.path} children={link.component} />
         ))}
         <Route path="/">
           <Homepage />

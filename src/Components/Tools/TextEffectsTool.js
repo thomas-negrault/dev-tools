@@ -76,12 +76,16 @@ const flipTable = {
 };
 
 const TITLE = "Text Effects Tool";
-const effects = {
+export const effects = {
   "Crossed (big)": plainText =>
     plainText
       .split("")
       .map(char => char + "\u0336")
       .join(""),
+  Capitalize: plainText => {
+    if (typeof plainText !== "string") return "";
+    return plainText.charAt(0).toUpperCase() + plainText.slice(1);
+  },
   "Crossed (small)": plainText =>
     plainText
       .split("")
