@@ -12,6 +12,7 @@ I wanted the design to be **clean and simple to use**, as a lot of tools website
 
 # Tools:
 
+- [Number base conversion](https://devtools.best/number-base-converter)
 - [Base64 Encoder/Decoder](https://devtools.best/base64-decode-encode)
 - [Emoji Picker Tool](https://devtools.best/emoji-picker)
 - [HTML Entities Encoder/Decoder](https://devtools.best/html-encoder-decoder)
