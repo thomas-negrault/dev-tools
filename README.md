@@ -24,6 +24,7 @@ I wanted the design to be **clean and simple to use**, as a lot of tools website
 - [Text Effects tool](https://devtools.best/text-effects)
 - [Url Encoder/Decoder](https://devtools.best/url-decode-encode)
 - [UUID Generator](https://devtools.best/uuid)
+- [Unix Epoch/Timestamp converter](https://devtools.best/epoch-timestamp-converter)
 
 # Evolution
 

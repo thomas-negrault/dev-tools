@@ -1,43 +1,49 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 .github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out
+  animation: octocat-wave 560ms ease-in-out;
 }
 
 @keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0)
+  0%,
+  100% {
+    transform: rotate(0);
   }
-  20%, 60% {
-    transform: rotate(-25deg)
+  20%,
+  60% {
+    transform: rotate(-25deg);
   }
-  40%, 80% {
-    transform: rotate(10deg)
+  40%,
+  80% {
+    transform: rotate(10deg);
   }
 }
 
 @media (max-width: 500px) {
   .github-corner:hover .octo-arm {
-    animation: none
+    animation: none;
   }
 
   .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out
+    animation: octocat-wave 560ms ease-in-out;
   }
 }
 
 body {
-  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif!important;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif !important;
 }
 
-.tool-header h1,.tool-header .h1 {
+.tool-header h1,
+.tool-header .h1 {
   font-size: 2rem;
 }
-.tool-header{
+.tool-header {
   margin-bottom: 20px;
 }
 
-.tool-header h2,.tool-header .h2 {
+.tool-header h2,
+.tool-header .h2 {
   font-size: 1.5rem;
 }
 
@@ -59,8 +65,8 @@ body {
 a[data-toggle="collapse"] {
   position: relative;
 }
-#sidebarCollapse{
-margin: 10px
+#sidebarCollapse {
+  margin: 10px;
 }
 
 .dropdown-toggle::after {
@@ -87,7 +93,9 @@ p {
   /*color: #999;*/
 }
 
-a, a:hover, a:focus {
+a,
+a:hover,
+a:focus {
   text-decoration: none;
   transition: all 0.3s;
 }
@@ -124,7 +132,8 @@ a, a:hover, a:focus {
   /*background: #fff;*/
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
   /*color: #fff;*/
   /*background: #6d7fcc;*/
 }
@@ -164,7 +173,7 @@ textarea.dark {
   margin-bottom: auto;
   text-align: left;
 }
-#content{
+#content {
   width: 100%;
 }
 .action-buttons {
@@ -173,43 +182,57 @@ textarea.dark {
   text-align: center;
 }
 
-.menu-link.active{
+.menu-link.active {
   color: #00bc8c;
   border: 1px solid #00bc8c;
 }
-#json-formatter{
+#json-formatter {
   font-size: 14px;
   overflow-x: auto;
   white-space: nowrap;
-
 }
-#json-formatter .json-formatter-string{
+#json-formatter .json-formatter-string {
   color: #00bc8c;
 }
 
-#json-formatter .json-formatter-key{
-  color: #3498DB;
+#json-formatter .json-formatter-key {
+  color: #3498db;
 }
 
-.alert{
-  margin-top:10px;
+.alert {
+  margin-top: 10px;
 }
 
 #hashTable td {
   word-break: break-all;
 }
 
-.form-check-inline.custom-control{
+.form-check-inline.custom-control {
   display: inline;
 }
 
-.blog{
-  padding:20px
+.blog {
+  padding: 20px;
 }
 
-#emojis .emoji{
+#emojis .emoji {
   cursor: pointer;
 }
-#emojis .emoji:hover{
+#emojis .emoji:hover {
   border: 1px solid #00bc8c;
+}
+
+.user-date-time-picker .rdtPicker {
+  color: #fff;
+  text-align: left;
+  background-color: #222;
+}
+
+.user-date-time-picker .rdtPicker thead tr:first-of-type th:hover,
+.user-date-time-picker .rdtPicker .rdtTimeToggle:hover,
+.user-date-time-picker .rdtPicker .rdtDay:hover,
+.user-date-time-picker .rdtPicker .rdtBtn:hover,
+.user-date-time-picker .rdtPicker .rdtMonth:hover,
+.user-date-time-picker .rdtPicker .rdtYear:hover {
+  background: #333;
 }

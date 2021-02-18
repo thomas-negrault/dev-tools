@@ -3,7 +3,7 @@ import React from "react";
 import UrlTool from "../Components/Tools/UrlTool";
 import WordCountTool from "../Components/Tools/WordCountTool";
 import JsonPrettierTool from "../Components/Tools/JsonPrettierTool";
-import TimestampTool from "../Components/Tools/TimestampTool";
+import TimestampTool from "../Components/Tools/TimestampTool/TimestampTool";
 import UuidTool from "../Components/Tools/UuidTool";
 import HashTool from "../Components/Tools/HashTool";
 import LoremIpsumTool from "../Components/Tools/LoremIpsumTool";
@@ -17,69 +17,69 @@ const links = [
   {
     path: "/base64-decode-encode",
     label: "Base64 Encoder/Decoder",
-    component: <Base64Tools />
+    component: <Base64Tools />,
   },
   {
     path: "/url-decode-encode",
     label: "Url Encoder/Decoder",
-    component: <UrlTool />
+    component: <UrlTool />,
   },
   {
     path: "/text-statistics",
     label: "Text Statistics",
-    component: <WordCountTool />
+    component: <WordCountTool />,
   },
   {
     path: "/json-prettier",
     label: "Json Prettier",
-    component: <JsonPrettierTool />
+    component: <JsonPrettierTool />,
   },
-  // {
-  //   path: "/timestamp",
-  //   label: "Timestamp",
-  //   component: <TimestampTool />
-  // },
+  {
+    path: "/epoch-timestamp-converter",
+    label: "Unix Epoch/Timestamp converter",
+    component: <TimestampTool />,
+  },
   {
     path: "/uuid",
     label: "UUID Generator",
-    component: <UuidTool />
+    component: <UuidTool />,
   },
   {
     path: "/text-hash-generator",
     label: "Text Hash Generator",
-    component: <HashTool />
+    component: <HashTool />,
   },
   {
     path: "/lorem-ipsum-generator",
     label: "Lorem Ipsum Generator",
-    component: <LoremIpsumTool />
+    component: <LoremIpsumTool />,
   },
   {
     path: "/html-encoder-decoder",
     label: "HTML Entities Encoder/Decoder",
-    component: <HtmlTool />
+    component: <HtmlTool />,
   },
   {
     path: "/text-effects",
     label: "Text Effects tool",
-    component: <TextEffectsTool />
+    component: <TextEffectsTool />,
   },
   {
     path: "/text-diff",
     label: "Text Comparison Tool",
-    component: <DiffTool />
+    component: <DiffTool />,
   },
   {
     path: "/emoji-picker",
     label: "Emoji Picker Tool",
-    component: <EmojiTool />
+    component: <EmojiTool />,
   },
 
   {
     path: "/number-base-converter",
     label: "Base Converter",
-    component: <BaseTool />
-  }
+    component: <BaseTool />,
+  },
 ];
 
 export default function getLinksConfig() {
